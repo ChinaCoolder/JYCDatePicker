@@ -120,7 +120,7 @@ public class DatePickerCell extends RelativeLayout {
             }, 100);
     }
 
-    private void changeByCurrentCalendar(){
+    public void changeByCurrentCalendar(){
         mTVDay.setTextColor(isSameMonth() ? (isSameDay() ? Color.parseColor("#4079f5") : (isToday() ? Color.WHITE : Color.BLACK)) : Color.parseColor("#cccccc"));
         mTVTraditionalDay.setTextColor(Color.parseColor(isSameMonth() ?  (isSameDay() ? "#3975F5" : (isToday() ? "#ffffff" : "#999999")) : "#d9d9d9"));
 

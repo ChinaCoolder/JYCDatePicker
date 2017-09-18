@@ -133,7 +133,6 @@ public class DatePicker extends LinearLayout {
 
         addView(rootView);
 
-
         initPanel(context);
         update();
 
@@ -156,6 +155,13 @@ public class DatePicker extends LinearLayout {
 
                     animator.setDuration(200).start();
                     changeType(needChangeToMonth ? TYPE_MONTH : TYPE_WEEK);
+
+                    postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            mCurrentMonthDatePanel.updateBG();
+                        }
+                    }, 200);
 
                     mRLContent.isScrolling = false;
                 }
@@ -255,9 +261,7 @@ public class DatePicker extends LinearLayout {
 
     private class GestureDetectorListener extends GestureDetector.SimpleOnGestureListener{
 
-        public GestureDetectorListener(){
-
-        }
+        public GestureDetectorListener(){}
 
         @Override
         public boolean onDown(MotionEvent e) {

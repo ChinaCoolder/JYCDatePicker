@@ -47,6 +47,12 @@ public class DatePickerPanel extends LinearLayout {
         init(context);
     }
 
+    public void updateBG(){
+        for (DatePickerCell cell : mCellList){
+            cell.changeByCurrentCalendar();
+        }
+    }
+
     public void setCurrentDay(Calendar calendar){
         this.mCurrent = calendar;
         for (int i = 0; i < mCellList.size(); i ++){
