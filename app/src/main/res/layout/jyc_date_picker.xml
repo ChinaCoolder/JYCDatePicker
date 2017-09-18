@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="1dp">
+        <com.zhy.android.percent.support.PercentLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.zhy.android.percent.support.PercentRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_heightPercent="11.6%w">
+
+                <ImageView
+                    android:id="@+id/jyc_date_picker_left_button"
+                    android:layout_width="0dp"
+                    app:layout_widthPercent="11%w"
+                    app:layout_paddingLeftPercent="4.2%w"
+                    app:layout_paddingRightPercent="4.2%w"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/icon_arrow_left"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:id="@+id/jyc_date_picker_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="2017年9月13日"
+                    app:layout_textSizePercent="4.2%w"
+                    android:textColor="#2f529d"/>
+
+                <ImageView
+                    android:id="@+id/jyc_date_picker_right_button"
+                    android:layout_width="0dp"
+                    app:layout_widthPercent="11%w"
+                    app:layout_paddingLeftPercent="4.2%w"
+                    app:layout_paddingRightPercent="4.2%w"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/icon_arrow_right"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"/>
+            </com.zhy.android.percent.support.PercentRelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="#e5e5e5"/>
+
+            <com.zhy.android.percent.support.PercentLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_heightPercent="8.7%w"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="@string/jyc_date_picker_sunday"
+                    android:gravity="center"
+                    android:textColor="#000"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="@string/jyc_date_picker_monday"
+                    android:gravity="center"
+                    android:textColor="#000"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="@string/jyc_date_picker_tuesday"
+                    android:gravity="center"
+                    android:textColor="#000"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="@string/jyc_date_picker_wednesday"
+                    android:gravity="center"
+                    android:textColor="#000"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="@string/jyc_date_picker_thursday"
+                    android:gravity="center"
+                    android:textColor="#000"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="@string/jyc_date_picker_friday"
+                    android:gravity="center"
+                    android:textColor="#000"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="@string/jyc_date_picker_saturday"
+                    android:gravity="center"
+                    android:textColor="#000"/>
+            </com.zhy.android.percent.support.PercentLinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="#e5e5e5"/>
+
+            <com.jyc.jycdatepicker.DatePickerContentContainer
+                android:id="@+id/jyc_date_picker_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.zhy.android.percent.support.PercentLinearLayout>
+    </android.support.v7.widget.CardView>
+</com.zhy.android.percent.support.PercentLinearLayout>
