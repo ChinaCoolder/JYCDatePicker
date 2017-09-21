@@ -302,6 +302,14 @@ public class DatePicker extends LinearLayout {
         }
     }
 
+    public void clickPre(){
+        mIVLeft.performClick();
+    }
+
+    public void clickAfter(){
+        mIVRight.performClick();
+    }
+
     public interface DatePickerClickListener{
         void cellClick(Calendar calendar);
         void clickPre(Calendar calendar);
