@@ -48,7 +48,8 @@ public class DatePicker extends LinearLayout {
     public void changeType(int type){
         if (mType != type){
             mType = type;
-
+            if (mCurrentListener != null)
+                mCurrentListener.typeChange(mType);
             changeMonthWeekByType();
         }
     }
@@ -64,6 +65,9 @@ public class DatePicker extends LinearLayout {
             } else if (mType == TYPE_WEEK){
                 target.add(Calendar.DATE, -7);
             }
+
+            if (mCurrentListener != null)
+                mCurrentListener.clickPre(target);
 
             changeDate(target);
         }
@@ -82,6 +86,9 @@ public class DatePicker extends LinearLayout {
                 target.add(Calendar.DATE, 7);
             }
 
+            if (mCurrentListener != null)
+                mCurrentListener.clickAfter(target);
+
             changeDate(target);
         }
     };
@@ -89,6 +96,12 @@ public class DatePicker extends LinearLayout {
     private Calendar mCurrentDay = Calendar.getInstance();
 
     private DatePickerClickListener mCurrentListener;
+
+    public Calendar getCurrentDay(){
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(mCurrentDay.getTime());
+        return calendar;
+    }
 
     public void setDatePickerCellClickListener(DatePickerClickListener listener){
         mCurrentListener = listener;
@@ -291,5 +304,8 @@ public class DatePicker extends LinearLayout {
 
     public interface DatePickerClickListener{
         void cellClick(Calendar calendar);
+        void clickPre(Calendar calendar);
+        void clickAfter(Calendar calendar);
+        void typeChange(int type);
     }
 }
