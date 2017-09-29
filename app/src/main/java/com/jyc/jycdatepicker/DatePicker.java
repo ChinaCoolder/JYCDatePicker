@@ -177,6 +177,8 @@ public class DatePicker extends LinearLayout {
                     }, 200);
 
                     mRLContent.isScrolling = false;
+                    if (mCurrentListener != null)
+                        mCurrentListener.stopScroll();
                 }
             }
         };
@@ -278,6 +280,8 @@ public class DatePicker extends LinearLayout {
 
         @Override
         public boolean onDown(MotionEvent e) {
+            if (mCurrentListener != null)
+                mCurrentListener.startScroll();
             return true;
         }
 
@@ -315,5 +319,7 @@ public class DatePicker extends LinearLayout {
         void clickPre(Calendar calendar);
         void clickAfter(Calendar calendar);
         void typeChange(int type);
+        void startScroll();
+        void stopScroll();
     }
 }
