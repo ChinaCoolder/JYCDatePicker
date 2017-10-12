@@ -21,5 +21,5 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
-    compile 'com.zhy:percent-support-extends:1.1.1'
+    compile 'com.github.ChinaCoolder:android-percent-support-extend:1.1.3'
 }
