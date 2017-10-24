@@ -2,6 +2,7 @@ package com.jyc.jycdatepicker;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.support.annotation.IdRes;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
@@ -122,12 +123,22 @@ public class DatePicker extends LinearLayout {
 
     public DatePicker(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        parseValue(context, attrs);
         init(context);
     }
 
     public DatePicker(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        parseValue(context, attrs);
         init(context);
+    }
+
+    private void parseValue(Context context, AttributeSet attrs){
+        if (context != null && attrs != null){
+            TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.JYCDatePicker);
+            mType = typedArray.getInt(R.styleable.JYCDatePicker_jyc_date_picker_show_type, TYPE_MONTH);
+            typedArray.recycle();
+        }
     }
 
     private void init(Context context){
@@ -257,6 +268,8 @@ public class DatePicker extends LinearLayout {
     private void changeHeightByContent(){
         if (getType() == TYPE_MONTH)
             mRLContent.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, mCurrentMonthDatePanel.getMaxHeight()));
+        else
+            mRLContent.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, mCurrentMonthDatePanel.getRowHeight()));
     }
 
     private void changeMonthWeekByType(){

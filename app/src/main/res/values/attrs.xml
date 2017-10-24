@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="JYCDatePicker">
+        <attr name="jyc_date_picker_show_type" format="enum">
+            <enum name="week" value="0"/>
+            <enum name="month" value="1"/>
+        </attr>
+    </declare-styleable>
+</resources>
