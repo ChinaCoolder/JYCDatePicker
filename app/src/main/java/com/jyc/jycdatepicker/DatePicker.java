@@ -193,6 +193,8 @@ public class DatePicker extends LinearLayout {
                 }
             }
         };
+
+        changeHeightByContent();
     }
 
     private <T> T $(View view, @IdRes int id){
