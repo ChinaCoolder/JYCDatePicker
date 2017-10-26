@@ -191,6 +191,9 @@ public class DatePicker extends LinearLayout {
                     if (mCurrentListener != null)
                         mCurrentListener.stopScroll();
                 }
+
+                if (mCurrentListener != null)
+                    mCurrentListener.actionUp();
             }
         };
 
@@ -300,8 +303,10 @@ public class DatePicker extends LinearLayout {
 
         @Override
         public boolean onDown(MotionEvent e) {
-            if (mCurrentListener != null)
+            if (mCurrentListener != null){
                 mCurrentListener.startScroll();
+                mCurrentListener.actionDown();
+            }
             return true;
         }
 
@@ -341,5 +346,7 @@ public class DatePicker extends LinearLayout {
         void typeChange(int type);
         void startScroll();
         void stopScroll();
+        void actionDown();
+        void actionUp();
     }
 }
